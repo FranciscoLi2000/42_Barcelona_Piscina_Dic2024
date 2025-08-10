@@ -1,6 +1,10 @@
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_is_negative(int n)
 {
@@ -8,4 +12,14 @@ void	ft_is_negative(int n)
 		ft_putchar('P');
 	else
 		ft_putchar('N');
+}
+
+int	main(void)
+{
+	int	nb;
+
+	printf("Enter a number:\n");
+	scanf("%i", &nb);
+	ft_is_negative(nb);
+	return (0);
 }
